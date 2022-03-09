@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>IMDb</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="buscar" method="POST">
+            <fieldset>
+                <div class="pesquisar">
+                    <nav>
+                        <img class="img" src="./static/img/logo2.png">
+                        <input id="campo" placeholder="Pesquisar IMDb" name="nome" type="text">
+                    </nav>
+                </div>
+                <div class="nome_filme">
+                    <div class="informacoes">
+                        <h1 id="info_nome">{{ nome }}</h1>
+                        <ul id="lista">
+                            <li>{{ ano }}</li>
+                            <li>{{ classificacao }}</li>
+                            <li>{{ duracao }}</li>
+                        </ul>
+                    </div>
+                    <div class="classificacao">
+                        <h1 id="texto_imdb">Avaliação IMDb <br>{{ imdb_nota }}</h1>
+                        <img id="estrela" src="./static/img/estrela.png">
+                        <h1 id="rotten">Rotten Tomatoes <br>{{ rotten }}</h1>
+                        <h1 id="metascore">METASCORE <br>{{ metascore }}</h1>
+                    </div>
+                </div>
+                <div class="gerais">
+                    <div class="poster">
+                        <img id="img_poster" src="{{ poster }}">
+                    </div>
+                    <div class="sinopse_informacoes">
+                        <div class="div_sinopse">
+                            <h3 id="sinopse">Sinopse</h3>
+                            <h3 id="texto_sinopse">{{ sinopse }}</h3>
+                        </div>
+                        <div class="div_informacoes">
+                            <span id="info_filme">Gênero: &emsp;{{ genero }}</span>
+                            <span id="info_filme">Direção: &emsp;{{ diretor }}</span>
+                            <span id="info_filme">Roteristas: &emsp;{{ roteristas }}</span>
+                            <span id="info_filme">Artistas: &emsp;{{ artistas }}</span>
+                            <span id="info_filme">Indicações: &emsp;{{ indicacoes }}</span>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
